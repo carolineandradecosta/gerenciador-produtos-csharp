@@ -49,13 +49,40 @@
             }
         }
 
+        //static void CadastrarProduto()
+        //{
+        //    Console.Write("\nDigite o nome do produto: ");
+        //    string nome = Console.ReadLine();
+
+        //    Console.Write("\nDigite o ID do produto: ");
+        //    int id = int.Parse(Console.ReadLine());
+
+        //    Produto produto = new Produto(id, nome);
+        //    produtos.Add(produto);
+
+        //    Console.WriteLine("\nProduto cadastrado com sucesso!");
+
+        //}
+
         static void CadastrarProduto()
         {
-            Console.Write("\nDigite o nome do produto: ");
-            string nome = Console.ReadLine();
 
             Console.Write("\nDigite o ID do produto: ");
             int id = int.Parse(Console.ReadLine());
+            if (produtos.Any(p => p.Id == id))
+            {
+                Console.WriteLine("O ID já existe.");
+                return;
+            }
+
+            Console.Write("\nDigite o nome do produto: ");
+            string nome = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(nome))
+            {
+                Console.WriteLine("O Nome não pode conter apenas espaços vazios.");
+                return;
+            }
 
             Produto produto = new Produto(id, nome);
             produtos.Add(produto);
