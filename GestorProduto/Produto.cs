@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-
-class Produto
+﻿class Produto
 {
     public int Id { get; set; }
     public string Nome { get; set; }
@@ -13,5 +9,3 @@ class Produto
         Nome = nome;
     }
 }
-
-
