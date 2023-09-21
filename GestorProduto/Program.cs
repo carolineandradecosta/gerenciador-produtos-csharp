@@ -1,4 +1,4 @@
-﻿namespace NomeDoSeuNamespace
+﻿namespace GestorProduto
 {
     class Program
     {
